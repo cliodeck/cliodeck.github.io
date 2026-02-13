@@ -1,0 +1,7 @@
+title: ClioDeck
+author: Frédéric Clavert
+description: A writing assistant for historians
+lang: en
+plugins:
+  - jekyll-seo-tag
+show_downloads: false
