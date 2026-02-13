@@ -19,8 +19,8 @@ ClioDeck est une expérience de [vibe-coding](https://en.wikipedia.org/wiki/Vibe
 </div>
 
 <div class="screenshot">
-<img src="img/white.png" alt="ClioDeck screenshot (light)" class="screenshot-light">
-<img src="img/dark.png" alt="ClioDeck screenshot (dark)" class="screenshot-dark">
+<img src="img/white.jpg" alt="ClioDeck screenshot (light)" class="screenshot-light">
+<img src="img/dark.jpg" alt="ClioDeck screenshot (dark)" class="screenshot-dark">
 </div>
 
 <h2><span lang="en">Features</span><span lang="fr">Fonctionnalités</span></h2>
