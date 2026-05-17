@@ -34,6 +34,24 @@ ClioDeck est une expérience de [vibe-coding](https://en.wikipedia.org/wiki/Vibe
 </li>
 
 <li>
+<strong><span lang="en">Brainstorm Mode</span><span lang="fr">Mode Brainstorm</span></strong>
+<span lang="en">A dedicated chat mode for the exploratory phase of research: agent loop with tool-use, retrieval grounding across PDFs, Tropy archives and Obsidian notes, and per-workspace context (<code>.cliohints</code>).</span>
+<span lang="fr">Un mode chat dédié à la phase exploratoire de la recherche : boucle agent avec outils, ancrage RAG sur PDF, archives Tropy et notes Obsidian, et contexte par projet (<code>.cliohints</code>).</span>
+</li>
+
+<li>
+<strong><span lang="en">MCP Integration</span><span lang="fr">Intégration MCP</span></strong>
+<span lang="en">ClioDeck is both an MCP client (consume third-party MCP servers from Brainstorm) and an MCP server (expose your indexed corpus to Claude Desktop or Claude Code). Inactive by default, audited via a JSONL access log.</span>
+<span lang="fr">ClioDeck est à la fois client MCP (consomme des serveurs MCP tiers depuis Brainstorm) et serveur MCP (expose votre corpus indexé à Claude Desktop ou Claude Code). Inactif par défaut, journal d'accès JSONL.</span>
+</li>
+
+<li>
+<strong><span lang="en">Archive Connectors</span><span lang="fr">Connecteurs d'archives</span></strong>
+<span lang="en">Search Gallica (BnF), HAL (CCSD) and Europeana directly from Brainstorm or any connected MCP client. API keys (Europeana only) are stored via Electron <code>safeStorage</code>, never in plain text.</span>
+<span lang="fr">Cherchez dans Gallica (BnF), HAL (CCSD) et Europeana directement depuis Brainstorm ou un client MCP connecté. Les clés API (Europeana uniquement) sont stockées via Electron <code>safeStorage</code>, jamais en clair.</span>
+</li>
+
+<li>
 <strong><span lang="en">Bibliography Management</span><span lang="fr">Gestion bibliographique</span></strong>
 <span lang="en">Zotero synchronization, BibTeX import/export, PDF indexing, and a statistics dashboard for your library.</span>
 <span lang="fr">Synchronisation Zotero, import/export BibTeX, indexation de PDF et tableau de bord statistique pour votre bibliothèque.</span>
