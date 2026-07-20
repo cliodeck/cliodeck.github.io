@@ -1,7 +1,28 @@
 title: ClioDeck
 author: Frédéric Clavert
-description: A writing assistant for historians
+description: A writing assistant for historians — local-first, AI-powered, for books and articles
 lang: en
+
+# Absolute URL: jekyll-seo-tag needs it to emit absolute og:image and
+# canonical links. Without it, shared links show no preview card.
+url: https://cliodeck.github.io
+
+# Preview image used when the link is shared (Open Graph / Twitter card).
+image: /img/dark.png
+
 plugins:
   - jekyll-seo-tag
 show_downloads: false
+
+# Setting `exclude` replaces Jekyll's default list rather than extending it:
+# the defaults are repeated here so `vendor/` never ends up published if
+# someone runs `bundle install --path vendor`.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md

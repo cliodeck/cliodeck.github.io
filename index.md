@@ -27,57 +27,63 @@ ClioDeck est une expérience de [vibe-coding](https://en.wikipedia.org/wiki/Vibe
 
 <div lang="en" markdown="1">
 
-This release candidate turns ClioDeck into an environment for **long-form writing**: books with real chapters, a rewritten editor, and an assistant that knows what you have already written.
+This release candidate is about **long-form writing**: books written in chapters, a rewritten editor, and an assistant that can read what you have already written. *New to ClioDeck? [Skip to what it does](#features).*
 
 </div>
 
 <div lang="fr" markdown="1">
 
-Ce candidat de version fait de ClioDeck un environnement d'**écriture longue** : des livres à vrais chapitres, un éditeur réécrit, et un assistant qui connaît ce que vous avez déjà écrit.
+Ce candidat de version tourne autour de l'**écriture longue** : des livres écrits en chapitres, un éditeur réécrit, et un assistant capable de lire ce que vous avez déjà écrit. *Vous découvrez ClioDeck ? [Passez à ce qu'il fait](#features).*
 
 </div>
 
 <ul class="features-list">
 
 <li>
-<strong><span lang="en">Write a book, chapter by chapter</span><span lang="fr">Écrire un livre, chapitre par chapitre</span></strong>
-<span lang="en">A book project is now a set of markdown files ordered by a manifest, not one monolithic document. Chapter panel (create, rename, reorder), two-level outline of the manuscript, search across the whole book, footnotes renumbered from one end to the other, and per-book settings: footnotes or endnotes, numbering continuous or restarting at each chapter, one bibliography or one per chapter.</span>
-<span lang="fr">Un projet livre est désormais un ensemble de fichiers markdown ordonnés par un manifeste, et non un document monolithique. Panneau de chapitres (créer, renommer, réordonner), plan du manuscrit à deux niveaux, recherche dans tout l'ouvrage, notes numérotées d'un bout à l'autre, et réglages par ouvrage : notes de bas de page ou de fin, numérotation continue ou repartant à chaque chapitre, bibliographie unique ou par chapitre.</span>
+<strong><span lang="en">Books are written in chapters</span><span lang="fr">Les livres s'écrivent en chapitres</span></strong>
+<span lang="en">A book is no longer one long file: each chapter is its own markdown file, and the project keeps their order. You get a chapter navigator, an outline of the manuscript, search across the whole book, footnote renumbering from the first chapter to the last, and a PDF with real numbered chapters and a table of contents — or a single chapter for a working proof.</span>
+<span lang="fr">Un livre n'est plus un seul long fichier : chaque chapitre a le sien, et le projet en garde l'ordre. Navigateur de chapitres, plan du manuscrit, recherche dans l'ouvrage entier, renumérotation des notes du premier au dernier chapitre, et un PDF à vrais chapitres numérotés avec table des matières — ou le tirage d'un seul chapitre pour relecture.</span>
 </li>
 
 <li>
-<strong><span lang="en">An export worthy of a book</span><span lang="fr">Un export digne d'un livre</span></strong>
-<span lang="en">PDF with real numbered chapters and a table of contents, Word with one section per chapter, page breaks and a table of contents — or a single chapter as a working proof. Two chapters each using <code>[^1]</code> used to produce the <em>same</em> note in the final document, the first one silently vanishing; the assembler now scopes note identifiers per chapter.</span>
-<span lang="fr">PDF avec de vrais chapitres numérotés et une table des matières, Word avec une section par chapitre, sauts de page et table des matières — ou le tirage d'un chapitre isolé. Deux chapitres utilisant chacun <code>[^1]</code> produisaient jusqu'ici la <em>même</em> note dans le document final, celle du premier disparaissant en silence ; l'assembleur préfixe désormais les identifiants de notes par chapitre.</span>
+<strong><span lang="en">Your file stays your file</span><span lang="fr">Votre fichier reste votre fichier</span></strong>
+<span lang="en">The editor is now CodeMirror 6, rendering markdown live. It never converts your text into an internal document and back: open a file, save it untouched, and it is <strong>identical byte for byte</strong> — including line endings and trailing spaces. Footnotes and Pandoc citations are understood natively, with hover previews and <code>@</code> autocomplete from Zotero.</span>
+<span lang="fr">L'éditeur repose désormais sur CodeMirror 6, qui affiche le markdown mis en forme sans le convertir. Votre texte n'est jamais transformé en document interne puis reconstitué : ouvrez un fichier, enregistrez-le sans y toucher, il est <strong>identique octet pour octet</strong> — fins de ligne et espaces en fin de ligne comprises. Notes de bas de page et citations Pandoc sont comprises nativement, avec aperçu au survol et autocomplétion <code>@</code> depuis Zotero.</span>
 </li>
 
 <li>
-<strong><span lang="en">A new editor — your file stays your file</span><span lang="fr">Un nouvel éditeur — votre fichier reste votre fichier</span></strong>
-<span lang="en">CodeMirror 6 with Obsidian-style live rendering. The markdown text is the source of truth: the editor never serialises an intermediate tree, so opening a file and saving it without a change returns it <strong>byte for byte identical</strong> — mixed CRLF line endings included. Footnotes (superscripts, hover preview, in-place editing) and Pandoc citations (clusters, locators, <code>@</code> autocomplete from Zotero, unresolved keys flagged) are parsed natively.</span>
-<span lang="fr">CodeMirror 6 en rendu live façon Obsidian. Le texte markdown est la source de vérité : l'éditeur ne sérialise jamais d'arbre intermédiaire, si bien qu'ouvrir un fichier et le sauvegarder sans le modifier le restitue <strong>identique octet pour octet</strong> — fins de ligne CRLF mixtes comprises. Notes de bas de page (exposants, infobulle, édition en place) et citations Pandoc (clusters, locators, autocomplétion <code>@</code> depuis Zotero, clés non résolues signalées) sont analysées nativement.</span>
+<strong><span lang="en">The assistant can read your manuscript</span><span lang="fr">L'assistant peut lire votre manuscrit</span></strong>
+<span lang="en">What you have already written becomes a fourth corpus, next to your PDFs, Tropy archives and Obsidian notes — so you can ask what you wrote about a subject three chapters ago. Excerpts from your own draft are labelled apart from your sources, and the assistant is told not to cite them as evidence. Indexing runs quietly after each save, and needs an embeddings model (local or from your provider).</span>
+<span lang="fr">Ce que vous avez déjà écrit devient un quatrième corpus, aux côtés de vos PDF, archives Tropy et notes Obsidian — de quoi retrouver ce que vous disiez d'un sujet trois chapitres plus tôt. Les extraits de votre brouillon sont distingués de vos sources, et l'assistant a pour consigne de ne pas les citer comme des preuves. L'indexation se fait discrètement après chaque enregistrement ; elle suppose un modèle d'embeddings (local ou chez votre fournisseur).</span>
 </li>
 
 <li>
-<strong><span lang="en">The assistant knows your manuscript</span><span lang="fr">L'assistant connaît votre manuscrit</span></strong>
-<span lang="en">What you have already written becomes a fourth corpus, alongside your PDFs, Tropy archives and Obsidian notes — indexed incrementally after each save, in the background. Its excerpts are labelled apart from your sources: an author must see when a passage comes from their own draft rather than from evidence.</span>
-<span lang="fr">Ce que vous avez déjà écrit devient un quatrième corpus, à côté de vos PDF, archives Tropy et notes Obsidian — indexé de façon incrémentale après chaque sauvegarde, en arrière-plan. Ses extraits sont étiquetés à part de vos sources : un auteur doit voir qu'un passage vient de son propre brouillon plutôt que d'une preuve.</span>
+<strong><span lang="en">The AI only ever proposes</span><span lang="fr">L'IA ne fait jamais que proposer</span></strong>
+<span lang="en">No AI feature writes into your document on its own. Anything it suggests arrives as a proposal you accept, alter or refuse, and each of those decisions is recorded — in full in the research journal, as bare counts in the AI usage journal, which never stores your prompts.</span>
+<span lang="fr">Aucune fonction d'IA n'écrit d'elle-même dans votre document. Ce qu'elle suggère se présente comme une proposition, que vous acceptez, retouchez ou refusez ; chacune de ces décisions est consignée — intégralement dans le journal de recherche, en simples décomptes dans le journal d'usage de l'IA, qui n'enregistre jamais vos requêtes.</span>
 </li>
 
 <li>
-<strong><span lang="en">AI writes only through proposals</span><span lang="fr">L'IA n'écrit que par propositions</span></strong>
-<span lang="en">No AI writing feature touches your document directly. Every intervention arrives as an atomic proposal you accept, modify or reject, and every decision is recorded — with its contents in the research journal, as counts only in the AI usage journal. It is an architectural lock, not a setting.</span>
-<span lang="fr">Aucune fonctionnalité d'écriture IA ne touche directement votre document. Chaque intervention arrive comme une proposition atomique que vous acceptez, modifiez ou refusez, et chaque décision est consignée — avec son contenu dans le journal de recherche, en simples agrégats dans le journal d'usage IA. C'est un verrou d'architecture, pas un réglage.</span>
-</li>
-
-<li>
-<strong><span lang="en">Project context, and safer by default</span><span lang="fr">Contexte de projet, et plus sûr par défaut</span></strong>
-<span lang="en">The <code>context.md</code> file at the root of your project — research topic, period, conventions to follow — is now genuinely sent to the assistant at the start of every conversation. Sending anything to a remote provider requires explicit consent, now enforced by the application core rather than by the interface alone.</span>
-<span lang="fr">Le fichier <code>context.md</code> à la racine de votre projet — sujet, période, conventions à respecter — est désormais réellement transmis à l'assistant au début de chaque conversation. Tout envoi vers un service distant exige un consentement explicite, garanti désormais par le cœur de l'application et non par la seule interface.</span>
+<strong><span lang="en">Project context, and consent before sending</span><span lang="fr">Contexte de projet, et consentement avant tout envoi</span></strong>
+<span lang="en">The <code>context.md</code> file in your project — subject, period, conventions to observe — is now really given to the assistant at the start of each conversation; until you write in it, nothing is sent. And the assistant will not reach a remote provider without your explicit consent, a rule the application core now enforces itself.</span>
+<span lang="fr">Le fichier <code>context.md</code> de votre projet — sujet, période, conventions à respecter — est enfin remis à l'assistant au début de chaque conversation ; tant que vous n'y écrivez rien, rien n'est transmis. Et l'assistant ne s'adresse pas à un service distant sans votre accord explicite, règle que le cœur de l'application applique désormais lui-même.</span>
 </li>
 
 </ul>
 
-<h2><span lang="en">Features</span><span lang="fr">Fonctionnalités</span></h2>
+<div lang="en" markdown="1">
+
+Some caveats worth knowing: the endnote and per-chapter numbering settings shape the PDF export only — the Word export ignores them for now; a per-chapter bibliography needs a bibliography file and gives way to a single one when you let ClioDeck format citations itself. The [full release notes](https://github.com/cliodeck/cliodeck-app/wiki/3.3-RC3-Release-Notes) list everything, including the bugs this candidate fixes for articles too.
+
+</div>
+
+<div lang="fr" markdown="1">
+
+Quelques réserves à connaître : les réglages de notes de fin et de numérotation par chapitre ne valent que pour l'export PDF — l'export Word les ignore pour l'instant ; une bibliographie par chapitre suppose un fichier bibliographique et cède la place à une bibliographie unique si vous laissez ClioDeck formater lui-même les citations. Les [notes de version complètes](https://github.com/cliodeck/cliodeck-app/wiki/3.3-RC3-Release-Notes) détaillent le reste, y compris les corrections qui valent aussi pour les articles.
+
+</div>
+
+<h2 id="features"><span lang="en">Features</span><span lang="fr">Fonctionnalités</span></h2>
 
 <ul class="features-list">
 
