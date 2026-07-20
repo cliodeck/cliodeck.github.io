@@ -157,7 +157,7 @@ Quelques réserves à connaître : les réglages de notes de fin et de numérota
 - **Your files stay yours** — Plain Markdown, byte-for-byte fidelity, readable and versionable outside ClioDeck
 - **Open source** — Licensed under GPLv3
 - **Works offline** — Embedded LLM for use without internet
-- **macOS & Linux** — Desktop application built with Electron
+- **macOS & Linux** — Desktop application built with Electron; a Windows build exists and should work, but is untested
 - **Academic transparency** — Every AI answer is traceable to its sources, and every AI edit is an explicit decision you made
 
 </div>
@@ -168,7 +168,7 @@ Quelques réserves à connaître : les réglages de notes de fin et de numérota
 - **Vos fichiers restent les vôtres** — Markdown brut, fidélité octet pour octet, lisible et versionnable hors de ClioDeck
 - **Open source** — Sous licence GPLv3
 - **Fonctionne hors ligne** — LLM embarqué pour une utilisation sans internet
-- **macOS & Linux** — Application de bureau construite avec Electron
+- **macOS & Linux** — Application de bureau construite avec Electron ; une version Windows existe et devrait fonctionner, mais n'est pas testée
 - **Transparence académique** — Chaque réponse de l'IA est traçable jusqu'à ses sources, et chaque modification par l'IA est une décision que vous avez prise
 
 </div>
