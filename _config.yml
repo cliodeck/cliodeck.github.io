@@ -5,7 +5,7 @@ lang: en
 
 # Absolute URL: jekyll-seo-tag needs it to emit absolute og:image and
 # canonical links. Without it, shared links show no preview card.
-url: https://cliodeck.github.io
+url: https://cliodeck.app
 
 # Preview image used when the link is shared (Open Graph / Twitter card).
 image: /img/dark.png
