@@ -11,6 +11,15 @@
     slots.forEach(function(slot) {
       var address = slot.getAttribute('data-email-user') + '@' +
                     slot.getAttribute('data-email-domain');
+
+      // Two kinds of slot. A link already written into the page — the header
+      // one — keeps its label and only has its target swapped: without
+      // JavaScript it leads to the Contact section, which spells the address.
+      if (slot.tagName === 'A') {
+        slot.href = 'mailto:' + address;
+        return;
+      }
+
       var link = document.createElement('a');
       link.href = 'mailto:' + address;
       link.textContent = address;

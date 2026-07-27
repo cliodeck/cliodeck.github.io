@@ -244,6 +244,29 @@ hr {
   gap: 0.75rem;
 }
 
+/* Volontairement plus sobre que les deux boutons voisins : trois éléments
+   encadrés côte à côte encombreraient un en-tête qui est déjà collant. */
+.header-contact {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0.1rem;
+  flex-shrink: 0;
+  transition: border-color var(--transition-speed) ease,
+              opacity var(--transition-speed) ease;
+}
+
+.header-contact:hover {
+  border-bottom-color: var(--color-text);
+}
+
+.header-contact:focus {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
+}
+
 /* Main content */
 .site-main {
   flex: 1;
@@ -504,7 +527,8 @@ hr {
 
   .theme-toggle,
   .theme-toggle-floating,
-  .lang-toggle {
+  .lang-toggle,
+  .header-contact {
     display: none;
   }
 

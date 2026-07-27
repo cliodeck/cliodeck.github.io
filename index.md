@@ -23,72 +23,6 @@ ClioDeck est une expérience de [vibe-coding](https://en.wikipedia.org/wiki/Vibe
 <img src="img/dark.png" alt="ClioDeck screenshot (dark)" class="screenshot-dark">
 </div>
 
-<h2><span lang="en">What's new in 1.0.0-rc.4</span><span lang="fr">Nouveautés de la 1.0.0-rc.4</span></h2>
-
-<div lang="en" markdown="1">
-
-Where the previous candidate added things, this one makes sure the existing ones tell you the truth. Three audits — security, robustness, interface — were run over everything rc.3 changed, and their findings fixed. Almost none of what they found crashed: it produced **wrong results without saying so**. *New to ClioDeck? [Skip to what it does](#features).*
-
-</div>
-
-<div lang="fr" markdown="1">
-
-Là où le précédent candidat ajoutait, celui-ci s'assure que l'existant dit vrai. Trois audits — sécurité, robustesse, interface — ont passé en revue tout ce que la rc.3 avait changé, et leurs constats ont été corrigés. Presque rien de ce qu'ils ont trouvé ne plantait : cela **produisait un résultat faux, sans le dire**. *Vous découvrez ClioDeck ? [Passez à ce qu'il fait](#features).*
-
-</div>
-
-<ul class="features-list">
-
-<li>
-<strong><span lang="en">Your exported book is whole again</span><span lang="fr">Votre livre exporté est de nouveau entier</span></strong>
-<span lang="en">Two defects silently removed text from an exported manuscript. A footnote placed inside an HTML block — a boxed aside, say — lost its text on export and printed <code>[^1]</code> instead. And every PDF title page was corrupted as soon as a name contained an ampersand: <em>Dupont &amp; Fils</em> printed as <em>Dupont \textbackslash&amp; Fils</em>, which made an abstract unreadable from its first ampersand. Two book export routes that failed outright now work.</span>
-<span lang="fr">Deux défauts retiraient du texte d'un manuscrit exporté, sans le dire. Une note de bas de page placée dans un bloc HTML — un encadré, par exemple — perdait son texte à l'export et imprimait <code>[^1]</code> à la place. Et toute page de titre PDF était corrompue dès qu'un nom contenait une esperluette : <em>Dupont &amp; Fils</em> s'imprimait <em>Dupont \textbackslash&amp; Fils</em>, ce qui rendait un résumé illisible dès la première occurrence. Deux chemins d'export de livre qui échouaient franchement fonctionnent.</span>
-</li>
-
-<li>
-<strong><span lang="en">What you are shown is the source's own text</span><span lang="fr">Ce qu'on vous montre est bien le texte de la source</span></strong>
-<span lang="en">The panel listing the excerpts an answer relies on had stopped showing them faithfully. Tables were shredded and recomposed into rows that had never existed; sentences taken from far apart were joined with no ellipsis, reading as a continuous quotation found nowhere in the document. For a discipline whose method is the quotation, that is not a cosmetic defect. Tables and code now pass through whole, cuts are marked, and the order of the text is preserved.</span>
-<span lang="fr">Le panneau qui liste les extraits sur lesquels une réponse s'appuie avait cessé de les montrer fidèlement. Des tableaux étaient pulvérisés puis recomposés en lignes qui n'avaient jamais existé ; des phrases prélevées loin les unes des autres étaient collées sans marque de coupe, donnant à lire une citation continue introuvable dans le document. Pour une discipline dont la méthode est la citation, ce n'est pas un défaut cosmétique. Les tableaux et le code passent désormais entiers, les coupes sont signalées, et l'ordre du texte est préservé.</span>
-</li>
-
-<li>
-<strong><span lang="en">Nothing is lost when you leave</span><span lang="fr">Rien ne se perd quand vous quittez</span></strong>
-<span lang="en">Quitting the application just after typing lost what you had written: the editor was never asked to save. A chapter could also disappear for good from the manuscript index, because its fingerprint was written before its content — so every later pass skipped it as unchanged. And renumbering footnotes during an export could rewrite the manuscript underneath it.</span>
-<span lang="fr">Quitter l'application juste après avoir tapé perdait ce que vous veniez d'écrire : on ne demandait jamais à l'éditeur d'enregistrer. Un chapitre pouvait aussi disparaître définitivement de l'index du manuscrit, son empreinte étant écrite avant son contenu — les passes suivantes le sautaient comme « inchangé ». Et renuméroter les notes pendant un export pouvait réécrire le manuscrit sous celui-ci.</span>
-</li>
-
-<li>
-<strong><span lang="en">Settings that existed only in a file</span><span lang="fr">Des réglages qui n'existaient que dans un fichier</span></strong>
-<span lang="en">Several features shipped without the controls that would let you reach them. Book settings — footnotes or endnotes, numbering, one bibliography or one per chapter — could only be changed by hand-editing a JSON file, which nothing told you was possible; they now have a dialog, and they drive the Word export as well as the PDF one. Your manuscript, indexed as a fourth corpus since rc.3, never actually reached the assistant and had no interface at all: both are fixed. The research journal can be purged, primary sources can be re-OCR'd one at a time, and the embedded embeddings model has a control at last.</span>
-<span lang="fr">Plusieurs fonctions étaient livrées sans les commandes permettant de les atteindre. Les réglages d'ouvrage — notes de bas de page ou de fin, numérotation, bibliographie unique ou par chapitre — ne se changeaient qu'en éditant un fichier JSON à la main, ce que rien n'indiquait ; ils ont maintenant une fenêtre de réglages, et pilotent l'export Word autant que le PDF. Votre manuscrit, indexé comme quatrième corpus depuis la rc.3, n'atteignait en réalité jamais l'assistant et n'avait aucune interface : les deux sont corrigés. Le journal de recherche peut être purgé, une source primaire peut être repassée à l'OCR seule, et le modèle d'embeddings embarqué a enfin un réglage.</span>
-</li>
-
-<li>
-<strong><span lang="en">In your language, everywhere</span><span lang="fr">Dans votre langue, partout</span></strong>
-<span lang="en">The interface is now fully translatable into French, English and German. The previous check compared the three translation files with each other, so it could not see a phrase missing from all three — which is how an entire dialog stayed English in every language. One case is worth naming: the insertion templates write into <em>your manuscript</em>, not into the interface, so a German speaker found French words inside their own document.</span>
-<span lang="fr">L'interface est désormais entièrement traduisible en français, anglais et allemand. Le contrôle précédent comparait les trois fichiers de traduction entre eux : il ne pouvait donc pas voir une phrase absente des trois — c'est ainsi qu'une fenêtre entière est restée en anglais dans toutes les langues. Un cas mérite d'être nommé : les gabarits d'insertion écrivent dans <em>votre manuscrit</em>, pas dans l'interface, si bien qu'un germanophone trouvait des mots français à l'intérieur de son propre document.</span>
-</li>
-
-<li>
-<strong><span lang="en">Sharing a project is safer</span><span lang="fr">Partager un projet est plus sûr</span></strong>
-<span lang="en">A ClioDeck project travels as a folder, and a folder can come from someone else. Opening one used to start whatever helper programs its configuration declared, without asking; it now asks, and remembers your answer. The context file at the root of a project — which is handed to the assistant with high authority — is now inspected like any other outside content. And a link clicked inside an assistant reply can no longer navigate the window out of the application.</span>
-<span lang="fr">Un projet ClioDeck voyage comme un dossier, et un dossier peut venir de quelqu'un d'autre. En ouvrir un lançait jusqu'ici les programmes auxiliaires déclarés dans sa configuration, sans rien demander ; il vous le demande désormais, et retient votre réponse. Le fichier de contexte à la racine d'un projet — remis à l'assistant avec une autorité élevée — est maintenant inspecté comme tout contenu extérieur. Et un lien cliqué dans une réponse de l'assistant ne peut plus faire sortir la fenêtre de l'application.</span>
-</li>
-
-</ul>
-
-<div lang="en" markdown="1">
-
-Some caveats worth knowing: the Word export now follows the book settings for chapter numbering and structure, but the choice between footnotes and endnotes remains PDF-only — it relies on typesetting commands a `.docx` cannot express. A per-chapter bibliography needs a bibliography file and gives way to a single one when you let ClioDeck format citations itself. The application is also still unsigned, and a dependency carries a published vulnerability that is [not reachable in this code](https://github.com/cliodeck/cliodeck-app/issues/77) — updating it means rewriting how PDFs are read, which was not a sensible thing to do in a release candidate. The [full release notes](https://github.com/cliodeck/cliodeck-app/wiki/3.4-RC4-Release-Notes) list everything.
-
-</div>
-
-<div lang="fr" markdown="1">
-
-Quelques réserves à connaître : l'export Word suit désormais les réglages d'ouvrage pour la numérotation et la structure des chapitres, mais le choix entre notes de bas de page et notes de fin reste propre au PDF — il repose sur des commandes de composition qu'un `.docx` ne sait pas exprimer. Une bibliographie par chapitre suppose un fichier bibliographique et cède la place à une bibliographie unique si vous laissez ClioDeck formater lui-même les citations. L'application n'est toujours pas signée, et une dépendance porte une faille publiée qui [n'est pas atteignable dans ce code](https://github.com/cliodeck/cliodeck-app/issues/77) — la mettre à jour suppose de réécrire la lecture des PDF, ce qu'il n'était pas raisonnable de faire dans un candidat de version. Les [notes de version complètes](https://github.com/cliodeck/cliodeck-app/wiki/3.4-RC4-Release-Notes) détaillent le reste.
-
-</div>
-
 <h2 id="features"><span lang="en">Features</span><span lang="fr">Fonctionnalités</span></h2>
 
 <ul class="features-list">
@@ -220,5 +154,71 @@ Bugs and feature requests belong in the [issue tracker](https://github.com/cliod
 <div lang="fr" markdown="1">
 
 Les bugs et demandes de fonctionnalités ont leur place dans le [suivi des tickets](https://github.com/cliodeck/cliodeck-app/issues), où ils restent visibles et suivis. Pour tout le reste — une question, un usage que je n'avais pas prévu, une collaboration académique — écrivez à <span class="email" data-email-user="infos" data-email-domain="cliodeck.app">infos (at) cliodeck.app</span>.
+
+</div>
+
+<h2 id="whats-new"><span lang="en">What's new in 1.0.0-rc.4</span><span lang="fr">Nouveautés de la 1.0.0-rc.4</span></h2>
+
+<div lang="en" markdown="1">
+
+Where the previous candidate added things, this one makes sure the existing ones tell you the truth. Three audits — security, robustness, interface — were run over everything rc.3 changed, and their findings fixed. Almost none of what they found crashed: it produced **wrong results without saying so**.
+
+</div>
+
+<div lang="fr" markdown="1">
+
+Là où le précédent candidat ajoutait, celui-ci s'assure que l'existant dit vrai. Trois audits — sécurité, robustesse, interface — ont passé en revue tout ce que la rc.3 avait changé, et leurs constats ont été corrigés. Presque rien de ce qu'ils ont trouvé ne plantait : cela **produisait un résultat faux, sans le dire**.
+
+</div>
+
+<ul class="features-list">
+
+<li>
+<strong><span lang="en">Your exported book is whole again</span><span lang="fr">Votre livre exporté est de nouveau entier</span></strong>
+<span lang="en">Two defects silently removed text from an exported manuscript. A footnote placed inside an HTML block — a boxed aside, say — lost its text on export and printed <code>[^1]</code> instead. And every PDF title page was corrupted as soon as a name contained an ampersand: <em>Dupont &amp; Fils</em> printed as <em>Dupont \textbackslash&amp; Fils</em>, which made an abstract unreadable from its first ampersand. Two book export routes that failed outright now work.</span>
+<span lang="fr">Deux défauts retiraient du texte d'un manuscrit exporté, sans le dire. Une note de bas de page placée dans un bloc HTML — un encadré, par exemple — perdait son texte à l'export et imprimait <code>[^1]</code> à la place. Et toute page de titre PDF était corrompue dès qu'un nom contenait une esperluette : <em>Dupont &amp; Fils</em> s'imprimait <em>Dupont \textbackslash&amp; Fils</em>, ce qui rendait un résumé illisible dès la première occurrence. Deux chemins d'export de livre qui échouaient franchement fonctionnent.</span>
+</li>
+
+<li>
+<strong><span lang="en">What you are shown is the source's own text</span><span lang="fr">Ce qu'on vous montre est bien le texte de la source</span></strong>
+<span lang="en">The panel listing the excerpts an answer relies on had stopped showing them faithfully. Tables were shredded and recomposed into rows that had never existed; sentences taken from far apart were joined with no ellipsis, reading as a continuous quotation found nowhere in the document. For a discipline whose method is the quotation, that is not a cosmetic defect. Tables and code now pass through whole, cuts are marked, and the order of the text is preserved.</span>
+<span lang="fr">Le panneau qui liste les extraits sur lesquels une réponse s'appuie avait cessé de les montrer fidèlement. Des tableaux étaient pulvérisés puis recomposés en lignes qui n'avaient jamais existé ; des phrases prélevées loin les unes des autres étaient collées sans marque de coupe, donnant à lire une citation continue introuvable dans le document. Pour une discipline dont la méthode est la citation, ce n'est pas un défaut cosmétique. Les tableaux et le code passent désormais entiers, les coupes sont signalées, et l'ordre du texte est préservé.</span>
+</li>
+
+<li>
+<strong><span lang="en">Nothing is lost when you leave</span><span lang="fr">Rien ne se perd quand vous quittez</span></strong>
+<span lang="en">Quitting the application just after typing lost what you had written: the editor was never asked to save. A chapter could also disappear for good from the manuscript index, because its fingerprint was written before its content — so every later pass skipped it as unchanged. And renumbering footnotes during an export could rewrite the manuscript underneath it.</span>
+<span lang="fr">Quitter l'application juste après avoir tapé perdait ce que vous veniez d'écrire : on ne demandait jamais à l'éditeur d'enregistrer. Un chapitre pouvait aussi disparaître définitivement de l'index du manuscrit, son empreinte étant écrite avant son contenu — les passes suivantes le sautaient comme « inchangé ». Et renuméroter les notes pendant un export pouvait réécrire le manuscrit sous celui-ci.</span>
+</li>
+
+<li>
+<strong><span lang="en">Settings that existed only in a file</span><span lang="fr">Des réglages qui n'existaient que dans un fichier</span></strong>
+<span lang="en">Several features shipped without the controls that would let you reach them. Book settings — footnotes or endnotes, numbering, one bibliography or one per chapter — could only be changed by hand-editing a JSON file, which nothing told you was possible; they now have a dialog, and they drive the Word export as well as the PDF one. Your manuscript, indexed as a fourth corpus since rc.3, never actually reached the assistant and had no interface at all: both are fixed. The research journal can be purged, primary sources can be re-OCR'd one at a time, and the embedded embeddings model has a control at last.</span>
+<span lang="fr">Plusieurs fonctions étaient livrées sans les commandes permettant de les atteindre. Les réglages d'ouvrage — notes de bas de page ou de fin, numérotation, bibliographie unique ou par chapitre — ne se changeaient qu'en éditant un fichier JSON à la main, ce que rien n'indiquait ; ils ont maintenant une fenêtre de réglages, et pilotent l'export Word autant que le PDF. Votre manuscrit, indexé comme quatrième corpus depuis la rc.3, n'atteignait en réalité jamais l'assistant et n'avait aucune interface : les deux sont corrigés. Le journal de recherche peut être purgé, une source primaire peut être repassée à l'OCR seule, et le modèle d'embeddings embarqué a enfin un réglage.</span>
+</li>
+
+<li>
+<strong><span lang="en">In your language, everywhere</span><span lang="fr">Dans votre langue, partout</span></strong>
+<span lang="en">The interface is now fully translatable into French, English and German. The previous check compared the three translation files with each other, so it could not see a phrase missing from all three — which is how an entire dialog stayed English in every language. One case is worth naming: the insertion templates write into <em>your manuscript</em>, not into the interface, so a German speaker found French words inside their own document.</span>
+<span lang="fr">L'interface est désormais entièrement traduisible en français, anglais et allemand. Le contrôle précédent comparait les trois fichiers de traduction entre eux : il ne pouvait donc pas voir une phrase absente des trois — c'est ainsi qu'une fenêtre entière est restée en anglais dans toutes les langues. Un cas mérite d'être nommé : les gabarits d'insertion écrivent dans <em>votre manuscrit</em>, pas dans l'interface, si bien qu'un germanophone trouvait des mots français à l'intérieur de son propre document.</span>
+</li>
+
+<li>
+<strong><span lang="en">Sharing a project is safer</span><span lang="fr">Partager un projet est plus sûr</span></strong>
+<span lang="en">A ClioDeck project travels as a folder, and a folder can come from someone else. Opening one used to start whatever helper programs its configuration declared, without asking; it now asks, and remembers your answer. The context file at the root of a project — which is handed to the assistant with high authority — is now inspected like any other outside content. And a link clicked inside an assistant reply can no longer navigate the window out of the application.</span>
+<span lang="fr">Un projet ClioDeck voyage comme un dossier, et un dossier peut venir de quelqu'un d'autre. En ouvrir un lançait jusqu'ici les programmes auxiliaires déclarés dans sa configuration, sans rien demander ; il vous le demande désormais, et retient votre réponse. Le fichier de contexte à la racine d'un projet — remis à l'assistant avec une autorité élevée — est maintenant inspecté comme tout contenu extérieur. Et un lien cliqué dans une réponse de l'assistant ne peut plus faire sortir la fenêtre de l'application.</span>
+</li>
+
+</ul>
+
+<div lang="en" markdown="1">
+
+Some caveats worth knowing: the Word export now follows the book settings for chapter numbering and structure, but the choice between footnotes and endnotes remains PDF-only — it relies on typesetting commands a `.docx` cannot express. A per-chapter bibliography needs a bibliography file and gives way to a single one when you let ClioDeck format citations itself. The application is also still unsigned, and a dependency carries a published vulnerability that is [not reachable in this code](https://github.com/cliodeck/cliodeck-app/issues/77) — updating it means rewriting how PDFs are read, which was not a sensible thing to do in a release candidate. The [full release notes](https://github.com/cliodeck/cliodeck-app/wiki/3.4-RC4-Release-Notes) list everything.
+
+</div>
+
+<div lang="fr" markdown="1">
+
+Quelques réserves à connaître : l'export Word suit désormais les réglages d'ouvrage pour la numérotation et la structure des chapitres, mais le choix entre notes de bas de page et notes de fin reste propre au PDF — il repose sur des commandes de composition qu'un `.docx` ne sait pas exprimer. Une bibliographie par chapitre suppose un fichier bibliographique et cède la place à une bibliographie unique si vous laissez ClioDeck formater lui-même les citations. L'application n'est toujours pas signée, et une dépendance porte une faille publiée qui [n'est pas atteignable dans ce code](https://github.com/cliodeck/cliodeck-app/issues/77) — la mettre à jour suppose de réécrire la lecture des PDF, ce qu'il n'était pas raisonnable de faire dans un candidat de version. Les [notes de version complètes](https://github.com/cliodeck/cliodeck-app/wiki/3.4-RC4-Release-Notes) détaillent le reste.
 
 </div>
