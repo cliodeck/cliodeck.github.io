@@ -3,3 +3,10 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 *.json
+
+# Bundler : utile seulement si un jour `bundle config set path vendor/bundle`
+# est employé. Par défaut les gems vont dans le dossier rbenv, hors du dépôt.
+.bundle/
+vendor/bundle/
+
+.DS_Store
