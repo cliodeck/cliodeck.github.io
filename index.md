@@ -213,12 +213,12 @@ ClioDeck est disponible sur [GitHub](https://github.com/cliodeck/cliodeck-app). 
 
 <div lang="en" markdown="1">
 
-Bugs and feature requests belong in the [issue tracker](https://github.com/cliodeck/cliodeck-app/issues), where they stay visible and get followed up. For anything else — a question, a use I hadn't anticipated, an academic collaboration — write to <span class="email" data-email-user="frederic" data-email-domain="cliodeck.app">frederic (at) cliodeck.app</span>.
+Bugs and feature requests belong in the [issue tracker](https://github.com/cliodeck/cliodeck-app/issues), where they stay visible and get followed up. For anything else — a question, a use I hadn't anticipated, an academic collaboration — write to <span class="email" data-email-user="infos" data-email-domain="cliodeck.app">infos (at) cliodeck.app</span>.
 
 </div>
 
 <div lang="fr" markdown="1">
 
-Les bugs et demandes de fonctionnalités ont leur place dans le [suivi des tickets](https://github.com/cliodeck/cliodeck-app/issues), où ils restent visibles et suivis. Pour tout le reste — une question, un usage que je n'avais pas prévu, une collaboration académique — écrivez à <span class="email" data-email-user="frederic" data-email-domain="cliodeck.app">frederic (at) cliodeck.app</span>.
+Les bugs et demandes de fonctionnalités ont leur place dans le [suivi des tickets](https://github.com/cliodeck/cliodeck-app/issues), où ils restent visibles et suivis. Pour tout le reste — une question, un usage que je n'avais pas prévu, une collaboration académique — écrivez à <span class="email" data-email-user="infos" data-email-domain="cliodeck.app">infos (at) cliodeck.app</span>.
 
 </div>
