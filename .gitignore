@@ -1,12 +1,24 @@
+# Build Jekyll
 _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
-*.json
 
 # Bundler : utile seulement si un jour `bundle config set path vendor/bundle`
 # est employé. Par défaut les gems vont dans le dossier rbenv, hors du dépôt.
 .bundle/
 vendor/bundle/
 
+# Outils locaux
+.claude/settings.local.json
+
+# macOS
 .DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Éditeurs
+.idea/
+*.swp
+*~
