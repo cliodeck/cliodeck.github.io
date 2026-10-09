@@ -125,7 +125,7 @@ ClioDeck est une expérience de [vibe-coding](https://en.wikipedia.org/wiki/Vibe
 
 ClioDeck is available on [GitHub](https://github.com/cliodeck/cliodeck-app). You'll find the documentation on the project's [wiki](https://github.com/cliodeck/cliodeck-app/wiki).
 
-**Before you download.** ClioDeck 1.0.0-rc.5 is a *release candidate*: usable for real work, but still under active testing. Two things are worth knowing:
+**Before you download.** ClioDeck 1.0.0-rc.5 is a *release candidate*: it is still under active testing and should not be used in production environment. Two things are worth knowing:
 
 - The application is now code-signed for macOS! Gatekeeper will open it and ask you if you wish to open it on first launch.
 - Installation is still **technical**. A local model server ([Ollama](https://ollama.com)) is needed unless you use a cloud provider with your own API key, and PDF export requires [Pandoc](https://pandoc.org) plus a LaTeX distribution. The [wiki](https://github.com/cliodeck/cliodeck-app/wiki) walks through it.
@@ -136,7 +136,7 @@ ClioDeck is available on [GitHub](https://github.com/cliodeck/cliodeck-app). You
 
 ClioDeck est disponible sur [GitHub](https://github.com/cliodeck/cliodeck-app). Vous trouverez la documentation sur le [wiki](https://github.com/cliodeck/cliodeck-app/wiki) du projet.
 
-**Avant de télécharger.** ClioDeck 1.0.0-rc.5 est un *candidat de version* : utilisable pour un vrai travail, mais encore en cours de test. Deux choses méritent d'être sues :
+**Avant de télécharger.** ClioDeck 1.0.0-rc.5 est un *candidat de version* : encore en cours de test, il ne doit pas être utilisé en production. Deux choses méritent d'être sues :
 
 - L'application est désormais signée sur macOS. Gatekeeper demandera si vous souhaitez l'ouvrir, mais ne l'empêchera pas.
 - L'installation reste **technique**. Un serveur de modèles local ([Ollama](https://ollama.com)) est nécessaire, sauf à utiliser un fournisseur distant avec votre propre clé d'API, et l'export PDF demande [Pandoc](https://pandoc.org) et une distribution LaTeX. Le [wiki](https://github.com/cliodeck/cliodeck-app/wiki) détaille la marche à suivre.
